@@ -27,12 +27,75 @@ nav a:hover{color:var(--accent)}
 .accent{color:var(--accent)}
 .btn{display:inline-block;margin-top:12px;padding:10px 16px;border-radius:8px;background:rgba(125,211,252,0.08);border:1px solid rgba(125,211,252,0.12);color:var(--accent);text-decoration:none;transition:background 0.3s, color 0.3s}
 .btn:hover{background:rgba(125,211,252,0.2)}
-.card{background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);padding:20px;border-radius:12px;margin:18px 0;box-shadow:0 4px 12px rgba(0,0,0,0.1);transition:transform 0.2s}
+.card{background:linear-gradient(180deg, rgba(255,255,252,0.02), transparent);padding:20px;border-radius:12px;margin:18px 0;box-shadow:0 4px 12px rgba(0,0,0,0.1);transition:transform 0.2s}
 .card:hover{transform:translateY(-4px)}
-.project{padding:12px 0;border-top:1px dashed rgba(255,255,255,0.03)}
+
+/* --- NEW STYLES START HERE --- */
+
+/* Styles for About Me section layout */
+.about-content {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+}
+.profile-pic {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid rgba(125,211,252,0.2);
+  margin-top: 10px;
+}
+.about-text {
+  flex: 1;
+}
+.about-text ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+/* Re-usable style for items (replaces .project) */
+.item {
+  padding: 14px 0;
+  border-top: 1px dashed rgba(255,255,255,0.05);
+}
+.item:first-of-type {
+  border-top: none;
+  padding-top: 4px;
+}
+.item h4, .item h5 {
+  margin: 0 0 8px;
+  color: var(--accent);
+}
+.item h5 {
+  color: var(--text);
+  font-weight: 600;
+}
+.item p {
+  margin: 4px 0;
+}
+
+/* --- NEW STYLES END HERE --- */
+
 .site-footer{padding:22px 0;text-align:center;color:var(--muted)}
+
 @media(max-width:640px){
   .lead{max-width:100%}
   .site-header .container{flex-direction:column;gap:12px}
   .hero h2{font-size:28px}
+  
+  /* New responsive style for about section */
+  .about-content {
+    flex-direction: column;
+    align-items: center;
+  }
+  .about-text {
+    text-align: left;
+    width: 100%;
+  }
+  .profile-pic {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 15px;
+  }
 }
