@@ -7,14 +7,28 @@
 }
 *{box-sizing:border-box}
 html,body{height:100%}
+
+/* --- THIS IS THE UPDATED SECTION --- */
 body{
   margin:0;
   font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
-  background:linear-gradient(180deg,var(--bg),#07101a 60%);
+  
+  /* 1. This is your original dark gradient */
+  background-color: var(--bg);
+  /* 2. This layers a circuit image on top of the gradient */
+  background-image: url('https://www.transparenttextures.com/patterns/circuit-board.png'), 
+                    linear-gradient(180deg, var(--bg), #07101a 60%);
+  /* 3. The image repeats, the gradient doesn't */
+  background-repeat: repeat, no-repeat;
+  /* 4. This makes the pattern stay still when you scroll, which looks very nice */
+  background-attachment: fixed;
+
   color:var(--text);
   -webkit-font-smoothing:antialiased;
   scroll-behavior: smooth;
 }
+/* --- END OF UPDATE --- */
+
 .container{max-width:900px;margin:0 auto;padding:28px}
 .site-header{background:transparent;padding:18px 0;position:sticky;top:0;z-index:50}
 .site-header .container{display:flex;align-items:center;justify-content:space-between}
@@ -23,14 +37,12 @@ nav a{color:var(--muted);text-decoration:none;margin-left:18px;transition:color 
 nav a:hover{color:var(--accent)}
 .hero{padding:64px 0;text-align:left}
 .hero h2{font-size:34px;margin:0 0 12px;line-height:1.2}
-.lead{color:var(--muted);max-width:70%}
+.lead{color:var muted;max-width:70%}
 .accent{color:var(--accent)}
 .btn{display:inline-block;margin-top:12px;padding:10px 16px;border-radius:8px;background:rgba(125,211,252,0.08);border:1px solid rgba(125,211,252,0.12);color:var(--accent);text-decoration:none;transition:background 0.3s, color 0.3s}
 .btn:hover{background:rgba(125,211,252,0.2)}
 .card{background:linear-gradient(180deg, rgba(255,255,252,0.02), transparent);padding:20px;border-radius:12px;margin:18px 0;box-shadow:0 4px 12px rgba(0,0,0,0.1);transition:transform 0.2s}
 .card:hover{transform:translateY(-4px)}
-
-/* --- NEW STYLES START HERE --- */
 
 /* Styles for About Me section layout */
 .about-content {
@@ -74,8 +86,6 @@ nav a:hover{color:var(--accent)}
 .item p {
   margin: 4px 0;
 }
-
-/* --- NEW STYLES END HERE --- */
 
 .site-footer{padding:22px 0;text-align:center;color:var(--muted)}
 
