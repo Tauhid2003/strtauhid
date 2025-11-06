@@ -16,8 +16,8 @@ body{
   /* 1. This is your original dark gradient */
   background-color: var(--bg);
   /* 2. This layers a circuit image on top of the gradient */
-  background-image: url('https://www.transparenttextures.com/patterns/circuit-board.jpg'), 
-                    linear-gradient(180deg, var(--bg), #07101a 60%);
+  background-image: url('circuit-bg.jpg'), 
+                  linear-gradient(180deg, var(--bg), #07101a 60%);
   /* 3. The image repeats, the gradient doesn't */
   background-repeat: repeat, no-repeat;
   /* 4. This makes the pattern stay still when you scroll, which looks very nice */
